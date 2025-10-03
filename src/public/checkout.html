@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checkout</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Checkout</h1>
+    <form id="checkoutForm">
+      <input type="text" id="name" placeholder="Full name" required />
+      <input type="text" id="phone" placeholder="Phone" required />
+      <input type="text" id="address1" placeholder="Address line 1" required />
+      <input type="text" id="address2" placeholder="Address line 2" />
+      <input type="text" id="city" placeholder="City" required />
+      <input type="text" id="state" placeholder="State" />
+      <input type="text" id="postal_code" placeholder="Postal code" required />
+      <input type="text" id="country" placeholder="Country" required />
+      <button type="submit">Pay & Place Order</button>
+    </form>
+    <div id="checkoutResult"></div>
+  </main>
+  <script src="/js/app.js"></script>
+  <script src="/js/checkout.js"></script>
+</body>
+</html>
