@@ -1,0 +1,31 @@
+version = 1
+
+[[analyzers]]
+name = "javascript"
+
+  [analyzers.meta]
+  plugins = [
+    "react",
+    "angular",
+    "vue",
+    "ember",
+    "meteor",
+    "angularjs"
+  ]
+  environment = [
+    "jasmine",
+    "jquery",
+    "nodejs",
+    "browser",
+    "jest",
+    "cypress",
+    "mongo",
+    "vitest",
+    "mocha"
+  ]
+
+[[transformers]]
+name = "standardjs"
+
+[[transformers]]
+name = "prettier"
