@@ -3,6 +3,7 @@
 A secure, performant, and maintainable E‑Commerce web application built with Node.js (Express.js) and MySQL. Features include user authentication (JWT), password reset via email, product management (with image upload), cart, checkout with simulated payment, PDF invoice generation, email confirmation, and admin dashboard with sales statistics.
 
 ## Tech Stack
+
 - Backend: Node.js, Express.js
 - Database: MySQL (mysql2)
 - Auth: JWT
@@ -12,6 +13,7 @@ A secure, performant, and maintainable E‑Commerce web application built with N
 - Frontend: HTML, CSS, JavaScript
 
 ## Security Highlights
+
 - Input validation and sanitization (express-validator)
 - Password hashing (bcryptjs)
 - JWT-based authentication
@@ -21,6 +23,7 @@ A secure, performant, and maintainable E‑Commerce web application built with N
 - Centralized error handling and logging (winston)
 
 ## Project Structure
+
 ```
 src/
   app.js
@@ -37,6 +40,7 @@ sql/
 ```
 
 ## Quick Start
+
 1. Copy `.env.example` to `.env` and configure your environment variables.
 2. Create a MySQL database and import `sql/schema.sql`.
 3. Install dependencies:
@@ -50,6 +54,7 @@ sql/
 5. Open the app at `http://localhost:3000`.
 
 ## API Overview
+
 - Auth:
   - POST `/api/auth/register`
   - POST `/api/auth/login`
@@ -79,9 +84,11 @@ sql/
 Detailed request/response examples are documented inline in route/controller code and can be expanded as needed.
 
 ## Scripts
+
 - `npm run dev` - start with live reload (nodemon)
 - `npm start` - start production server
 
 ## Notes
+
 - For development, configure SMTP with a test provider (e.g., [Ethereal Email](https://ethereal.email/)) or your SMTP server.
 - Default upload directory is `uploads/` (ignored by git). Max upload size is configurable via `UPLOAD_MAX_SIZE_MB`.

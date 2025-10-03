@@ -1,5 +1,5 @@
-const nodemailer = require('nodemailer');
-const logger = require('../config/logger');
+const nodemailer = require("nodemailer");
+const logger = require("../config/logger");
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
@@ -12,9 +12,15 @@ const transporter = nodemailer.createTransport({
 });
 
 async function sendMail({ to, subject, html, attachments }) {
-  const from = process.env.SMTP_FROM || 'no-reply@example.com';
-  const info = await transporter.sendMail({ from, to, subject, html, attachments });
-  logger.info('Email sent: %s', info.messageId);
+  const from = process.env.SMTP_FROM || "no-reply@example.com";
+  const info = await transporter.sendMail({
+    from,
+    to,
+    subject,
+    html,
+    attachments,
+  });
+  logger.info("Email sent: %s", info.messageId);
   return info;
 }
 
