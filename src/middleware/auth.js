@@ -1,10 +1,10 @@
-const jwt = require('jsonwebtoken');
+const jwt = require("jsonwebtoken");
 
 function authenticate(req, res, next) {
-  const authHeader = req.headers['authorization'] || '';
-  const token = authHeader.startsWith('Bearer ') ? authHeader.slice(7) : null;
+  const authHeader = req.headers.authorization || "";
+  const token = authHeader.startsWith("Bearer ") ? authHeader.slice(7) : null;
   if (!token) {
-    return res.status(401).json({ message: 'Unauthorized' });
+    return res.status(401).json({ message: "Unauthorized" });
   }
   try {
     const payload = jwt.verify(token, process.env.JWT_SECRET);
@@ -15,14 +15,14 @@ function authenticate(req, res, next) {
     };
     next();
   } catch (err) {
-    return res.status(401).json({ message: 'Invalid token' });
+    return res.status(401).json({ message: "Invalid token" });
   }
 }
 
 function requireRole(role) {
   return (req, res, next) => {
     if (!req.user || req.user.role !== role) {
-      return res.status(403).json({ message: 'Forbidden' });
+      return res.status(403).json({ message: "Forbidden" });
     }
     next();
   };
